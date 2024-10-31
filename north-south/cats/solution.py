@@ -2,7 +2,6 @@ from collections import defaultdict, deque
 
 
 def solve(edges):
-
     def is_bipartite(graph):
         color = {}
         for node in graph:
@@ -44,7 +43,7 @@ edges = [
     .splitlines()
 ]
 
-solution = solve(edges)
+solution = solve(edges[1:])
 
 print(len(solution[0]), len(solution[1]))
 print(*sorted(solution[0]), sep=" ")

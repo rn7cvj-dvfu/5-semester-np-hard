@@ -64,13 +64,16 @@ def generate_graph(
     return list(edges)
 
 
-examples_count = 6
-n = random.randint(1, 1000)
+examples_count = 10
 
 for i in range(examples_count):
+    n = random.randint(100, 1000)
+    
     edges = generate_graph(n, random_shuffle=True)
 
     f = open(f"{str(i + 1).rjust(2, '0')}.in", "w")
+
+    f.write(f"{n} {len(edges)}\n")
 
     for edge in edges:
         f.write(f"{edge[0]} {edge[1]}\n")

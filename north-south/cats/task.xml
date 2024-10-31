@@ -68,29 +68,21 @@
 			<p>$1 \leq u \leq n$</p>
 			<p>$1 \leq v \leq n$</p>
 		</ProblemConstraints>
-		<Import type="checker" guid="std.nums"/>
+		<!-- <Import type="checker" guid="std.nums"/> -->
 		<Solution src="solution.py" name="sol"/>
 		<Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
-		<Sample rank="1">
+		<!-- <Sample rank="1">
 			<SampleIn>3</SampleIn>
 			<SampleOut>1</SampleOut>
 		</Sample>
 		<Sample rank="2">
 			<SampleIn>5</SampleIn>
 			<SampleOut>3</SampleOut>
-		</Sample>
-		<Test rank="1" points="2">
-			<In>3</In>
-			<Out>1</Out>
-		</Test>
-		<Test rank="2" points="3">
-			<In>5</In>
-			<Out>3</Out>
-		</Test>
-		<Test rank="3-21" points="5">
+		</Sample> -->
+		<Test rank="1-10" points="1">
 			<In genAll="1" use="gen"/>
 		</Test>
-		<Test rank="3-21">
+		<Test rank="1-10">
 			<Out use="sol"/>
 		</Test>
 	</Problem>
