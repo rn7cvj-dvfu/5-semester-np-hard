@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATS version="1.11">
+<Problem title="Сколько селёдок?" lang="ru" tlimit="2" mlimit="256M"
+    author="П. Месенёв, А. Маметьев, Yandex cup" inputFile="*STDIN" outputFile="*STDOUT"
+    saveInputPrefix="50B" saveOutputPrefix="50B" saveAnswerPrefix="50B">
+
+<Keyword code="cmp.trivial"/>
+
+<ProblemStatement>
+<p>
+    Витя, Петя и Олег решили сходить на рыбалку за селёдками.
+    В море селёдок много и каждая из них весит строго целое количество килограмм.
+    Олег провёл классификацию рыбы и выяснил, что массы селёдок образуют
+    последовательность, заданную следующим образом: $x_i = x_{i-1} + i$.
+    Минимальный вес селёдки составляет один килограмм.
+    Мальчики взяли с собой ведро, в которое помещается $N$ килограмм рыбы.
+    Разумеется, они хотели бы вернуться домой с полным ведром селёдок.
+    </p>
+    <p>
+    Так как рыбачить умеет только Витя, а Олег уже свою часть работы закрыл исследованием, то
+    Петя вызвался посчитать, какое минимальное количество селёдок
+    Вите требуется поймать, пока Петя и Олег будут греться у костра.
+</p>
+</ProblemStatement>
+
+<InputFormat>
+    <p>Входной файл содержит единственное число $N$~-- вместимость ведра в килограммах.</p>
+</InputFormat>
+
+<OutputFormat>
+    <p>В выходной файл выведите число~-- минимальное число селёдок.</p>
+</OutputFormat>
+<ProblemConstraints>
+    <p>$1 \leq N \leq 5*10^{11}$</p>
+</ProblemConstraints>
+
+<Import type="checker" guid="std.nums"/>
+<Solution src="solution.py" name="sol"/>
+<Generator src="gen.py" name="gen" outputFile="%0n.in" timeLimit="10"/>
+
+<Sample rank="1">
+    <SampleIn>3</SampleIn>
+    <SampleOut>1</SampleOut>
+</Sample>
+<Sample rank="2">
+    <SampleIn>5</SampleIn>
+    <SampleOut>3</SampleOut>
+</Sample>
+
+<Test rank="1" points="2">
+    <In>3</In>
+    <Out>1</Out>
+</Test>
+<Test rank="2" points="3">
+    <In>5</In>
+    <Out>3</Out>
+</Test>
+
+<Test rank="3-21" points="5">
+    <In genAll="1" use="gen"/>
+</Test>
+<Test rank="3-21">
+    <Out use="sol"/>
+</Test>
+</Problem>
+</CATS>

@@ -12,13 +12,13 @@ def generate_graph(
     """
     Генерирует двудольный грф
 
-    Параметры:\\
-    n (int): Общее количество вершин. \\
-    extra_edges (int): Кол-во дополнительных случайных ребер в графе.\\
-    m (int): Общее количество ребер в графе, если задано то в графе будет ровно m ребер. Не гарантируется что граф будет двудольным . \\
-    random_shuffle (bool) : перемешать у части ребер порядок вершин.\\
+    Параметры:
+    n (int): Общее количество вершин.
+    extra_edges (int): Кол-во дополнительных случайных ребер в графе.
+    m (int): Общее количество ребер в графе, если задано то в графе будет ровно m ребер. Не гарантируется что граф будет двудольным.
+    random_shuffle (bool) : перемешать у части ребер порядок вершин.
 
-    Возвращает:\\
+    Возвращает:
     list[tuple[int, int]]: Список ребер графа.
     """
     n1 = random.randint(1, n // 2)  # Размер первого королевства
@@ -64,24 +64,13 @@ def generate_graph(
     return list(edges)
 
 
-def print_edges(edges: list[tuple[int, int]]):
+examples_count = 6
+n = random.randint(1, 1000)
 
-    print(f"{len(edges)}")
+for i in range(examples_count):
+    edges = generate_graph(n, random_shuffle=True)
 
-    for edge in edges:
-        print(f"{edge[0]} {edge[1]}")
-
-
-def main():
-
-    n = 3
-    edges = generate_graph(n)
-
-    print(f"{n} {len(edges)}")
+    f = open(f"{str(i + 1).rjust(2, '0')}.in", "w")
 
     for edge in edges:
-        print(f"{edge[0]} {edge[1]}")
-
-
-if __name__ == "__main__":
-    main()
+        f.write(f"{edge[0]} {edge[1]}\n")

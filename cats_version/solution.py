@@ -1,7 +1,5 @@
 from collections import defaultdict, deque
 
-from generator import generate_graph, print_edges
-
 
 def solve(edges):
 
@@ -37,23 +35,17 @@ def solve(edges):
     return [left_set, right_set]
 
 
-def main():
+example_number = int(input())
 
-    edges = generate_graph(8, random_shuffle=True)
+edges = [
+    list(map(int, line.split()))
+    for line in open("{}.in".format(str(example_number).rjust(2, "0")))
+    .read()
+    .splitlines()
+]
 
-    print_edges(edges)
+solution = solve(edges)
 
-    print("-" * 10)
-
-    solution = solve(edges)
-
-    n = len(solution[0])
-    m = len(solution[1])
-
-    print(n, m)
-    print(*sorted(solution[0]), sep=" ")
-    print(*sorted(solution[1]), sep=" ")
-
-
-if __name__ == "__main__":
-    main()
+print(len(solution[0]), len(solution[1]))
+print(*sorted(solution[0]), sep=" ")
+print(*sorted(solution[1]), sep=" ")
