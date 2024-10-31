@@ -75,9 +75,11 @@ def print_edges(edges: list[tuple[int, int]]):
 def main():
 
     n = 3
+    k = 2 # должно быть случайным от 1 до n
+    
     edges = generate_graph(n)
 
-    print(f"{n} {len(edges)}")
+    print(f"{n} {len(edges)} {k}")
 
     for edge in edges:
         print(f"{edge[0]} {edge[1]}")
