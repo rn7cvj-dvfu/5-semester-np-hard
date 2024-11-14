@@ -45,6 +45,10 @@ edges = [
 
 solution = solve(edges[1:])
 
-print(len(solution[0]), len(solution[1]))
-print(*sorted(solution[0]), sep=" ")
-print(*sorted(solution[1]), sep=" ")
+first = solution[0] if 1 in solution[0] else solution[1]
+second = solution[0] if 1 not in solution[0] else solution[1]
+ 
+ 
+print(len(first), len(second))
+print(*sorted(first), sep=" ")
+print(*sorted(second), sep=" ")
